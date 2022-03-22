@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="jumbotron text-center">
+        <h1>Mission to Mars</h1>
+        <a class="btn btn-primary" href="/scrape" role="button">Scrape New Data</a>
+      </div>
+      
+      <div class="container">
+        <div class="row">
+            <h1>Latest Mars News</h1><br>
+            {{mars.title}} <br>
+            {{mars.teaser}}
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Mars Featured Image</h3> <br>
+                <img src={{mars.full_url}} alt="Mars Image">
+            </div>
+            <div class="col-md-6">
+                <div class="table-responsive">
+                    {{mars.result}}
+                </div>
+            </div>
+        </div>
+        <div class="row">Mars Hemispheres</div>
+        <div class="row">
+            <div class="col-md-3">
+                <img src={{mars.mars_list[0].mars_img}} alt={{mars.mars_list[0].mars_title}}>
+                <h4>{{mars.mars_list[0].mars_title}}</h4>
+              </div>
+            <div class="col-md-3">
+                <img src={{mars.mars_list[1].mars_img}} alt={{mars.mars_list[1].mars_title}}>
+                <h4>{{mars.mars_list[1].mars_title}}</h4>
+            </div>
+            <div class="col-md-3">
+                <img src={{mars.mars_list[2].mars_img}} alt={{mars.mars_list[2].mars_title}}>
+                <h4>{{mars.mars_list[2].mars_title}}</h4>
+            </div>
+            <div class="col-md-3">
+                <img src={{mars.mars_list[3].mars_img}} alt={{mars.mars_list[3].mars_title}}>
+                <h4>{{mars.mars_list[3].mars_title}}</h4>
+            </div>
+        </div>
+       
+</body>
+
+</html>

@@ -3,7 +3,6 @@ from splinter import Browser
 from bs4 import BeautifulSoup
 import pandas as pd
 from webdriver_manager.chrome import ChromeDriverManager
-import pymongo
 
 def scrape():
     # Setup splinter
@@ -79,3 +78,4 @@ def scrape():
                 'Mars-Earth comparison': result, 
                 'Mars Hemispheres': mars_list}
     browser.quit()
+    return consolidated_dict
