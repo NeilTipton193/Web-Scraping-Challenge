@@ -3,6 +3,7 @@ from splinter import Browser
 from bs4 import BeautifulSoup
 import pandas as pd
 from webdriver_manager.chrome import ChromeDriverManager
+import time
 
 def scrape():
     # Setup splinter
@@ -75,10 +76,10 @@ def scrape():
             print(e)
 
     #Consolidate all scraped data into one dictionary
-        consolidated_dict = {'News title': title,
-                    'News teaser': teaser,
-                    'Featured image': full_url,
-                    'Mars-Earth comparison': result, 
-                    'Mars_Hemispheres': mars_list}
+    consolidated_dict = {'News title': title,
+                'News teaser': teaser,
+                'Featured image': full_url,
+                'Mars-Earth comparison': result, 
+                'Mars_Hemispheres': mars_list}
     browser.quit()
     return consolidated_dict
