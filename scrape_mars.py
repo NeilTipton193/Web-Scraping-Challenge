@@ -75,10 +75,10 @@ def scrape():
             print(e)
 
     #Consolidate all scraped data into one dictionary
-    consolidated_dict = {'News title': title,
-                'News teaser': teaser,
-                'Featured image': full_url,
-                'Mars-Earth comparison': result, 
-                'Mars_Hemispheres': mars_list}
+        consolidated_dict = {'News title': title,
+                    'News teaser': teaser,
+                    'Featured image': full_url,
+                    'Mars-Earth comparison': result, 
+                    'Mars_Hemispheres': mars_list}
     browser.quit()
     return consolidated_dict
