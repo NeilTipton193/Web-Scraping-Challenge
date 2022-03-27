@@ -66,7 +66,10 @@ def scrape():
         try:
             mars_img = mars_url+mars_item[i].img['src']
             mars_title =mars_item[i].img['alt']
-            mars_dict = {mars_title, mars_img}
+            mars_dict = {} 
+            mars_dict = {'title':mars_title,'img_url': mars_img}
+            # mars_dict['title']=mars_title 
+            # mars_dict['img_url']= mars_img
             mars_list.append(mars_dict)
         except Exception as e:
             print(e)
@@ -76,6 +79,6 @@ def scrape():
                 'News teaser': teaser,
                 'Featured image': full_url,
                 'Mars-Earth comparison': result, 
-                'Mars Hemispheres': mars_list}
+                'Mars_Hemispheres': mars_list}
     browser.quit()
     return consolidated_dict
