@@ -18,17 +18,17 @@
       <div class="container">
         <div class="row">
             <h1>Latest Mars News</h1><br>
-            {{mars.title}} <br>
-            {{mars.teaser}}
+            {{mars.News_title}} <br>
+            {{mars.News_teaser}}
         </div>
         <div class="row">
             <div class="col-md-6">
                 <h3>Mars Featured Image</h3> <br>
-                <img src={{mars.full_url}} alt="Mars Image">
+                <img src={{mars.Featured_image}} alt="Mars Image">
             </div>
             <div class="col-md-6">
                 <div class="table-responsive">
-                    {{mars.result}}
+                    {{mars.Mars_Earth_comparison}}
                 </div>
             </div>
         </div>
@@ -36,19 +36,19 @@
         <div class="row">
             <div class="col-md-3">
                 <img src={{mars.Mars_Hemispheres[0].img_url}} alt={{mars.Mars_Hemispheres[0].title}}>
-                <h4>{{mars.mars_list[0].mars_title}}</h4>
+                <h4>{{mars.Mars_Hemispheres[0].title}}</h4>
               </div>
             <div class="col-md-3">
                 <img src={{mars.Mars_Hemispheres[1].img_url}} alt={{mars.Mars_Hemispheres[1].title}}>
-                <h4>{{mars.mars_list[1].mars_title}}</h4>
+                <h4>{{mars.Mars_Hemispheres[1].title}}</h4>
             </div>
             <div class="col-md-3">
                 <img src={{mars.Mars_Hemispheres[2].img_url}} alt={{mars.Mars_Hemispheres[2].title}}>
-                <h4>{{mars.mars_list[2].mars_title}}</h4>
+                <h4>{{mars.Mars_Hemispheres[2].title}}</h4>
             </div>
             <div class="col-md-3">
-                <img src={{mars.Mars_Hemispheres[3].img_url}} alt={mars.Mars_Hemispheres[3].title}}>
-                <h4>{{mars.mars_list[3].mars_title}}</h4>
+                <img src={{mars.Mars_Hemispheres[3].img_url}} alt={{mars.Mars_Hemispheres[3].title}}>
+                <h4>{{mars.Mars_Hemispheres[3].title}}</h4>
             </div>
         </div>
        

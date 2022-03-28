@@ -19,12 +19,11 @@ def scrape():
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
 
-    # Examine the results, then determine element that contains sought info
-    print(soup.prettify())
-
     #Save latest news title and teaser to variables
     title = soup.find("div", class_="content_title").text
     teaser = soup.find('div',class_="article_teaser_body").text
+    #print(title)
+    #print(teaser)
 
     #Setup browser and Beautiful Soup for https://spaceimages-mars.com
     pic_url = 'https://spaceimages-mars.com'
@@ -33,11 +32,11 @@ def scrape():
     pic_html = browser.html
     pic_soup = BeautifulSoup(pic_html,'html.parser')
 
-
-
     #use .find() to scrape source 
     url_end = pic_soup.find("img", class_="headerimage fade-in")['src']
     full_url = pic_url + '/' +url_end
+
+    #print(full_url)
 
     #Use Pandas to scrape https://galaxyfacts-mars.com
     table_url = 'https://galaxyfacts-mars.com'
@@ -48,6 +47,7 @@ def scrape():
     #Convert to html table string
     result = df.to_html(index=False)
     result = result.replace('\n','')
+    #print(result)
 
     #Set up for scrape of https://marshemispheres.com/
     mars_url = 'https://marshemispheres.com/'
@@ -76,10 +76,10 @@ def scrape():
             print(e)
 
     #Consolidate all scraped data into one dictionary
-    consolidated_dict = {'News title': title,
-                'News teaser': teaser,
-                'Featured image': full_url,
-                'Mars-Earth comparison': result, 
-                'Mars_Hemispheres': mars_list}
-    browser.quit()
+    consolidated_dict = {'News_title': title,
+                        'News_teaser': teaser,
+                        'Featured_image': full_url,
+                        'Mars_Earth_comparison': result, 
+                        'Mars_Hemispheres': mars_list}
+    #print(consolidated_dict)
     return consolidated_dict
